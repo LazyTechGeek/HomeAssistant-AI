@@ -1,6 +1,8 @@
 # 🤖 Home Assistant + OpenAI: AI Tasks with Object Recognition
 
-In this video, I show you how to use Home Assistant’s AI Tasks with OpenAI to analyze a fridge photo and automatically list its contents. You’ll see how to set up a fake camera, create automations that notify you on mobile, and display the detected items directly in your dashboard — first with input_text and then with Markdown for more flexibility. This step-by-step guide makes it easy to follow along and try it out yourself
+Want to see AI in action in Home Assistant?
+
+In this video, I use OpenAI’s AI Tasks to analyse a fridge photo, send mobile notifications, and display the items directly in your dashboard. A full step-by-step guide you can follow along with.
 
 ▶️ [Watch here](https://youtu.be/i4QgnzGsVM8)  
 
