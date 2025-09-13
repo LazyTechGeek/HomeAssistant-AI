@@ -1,0 +1,39 @@
+square: false
+type: grid
+columns: 2
+cards:
+  - show_state: false
+    show_name: false
+    camera_view: auto
+    fit_mode: fill
+    type: picture-entity
+    entity: camera.local_file
+    tap_action:
+      action: call-service
+      service: automation.trigger
+      data:
+        entity_id: automation.whats_in_fridge
+  - type: markdown
+    title: null
+    content: "{{ state_attr('sensor.read_fridge_md','md') }}"
+  - type: horizontal-stack
+    view_layout:
+      column: 1
+      row: 2
+      column_span: 2
+    cards:
+      - show_name: true
+        show_icon: true
+        type: button
+        name: Refresh
+        icon: mdi:refresh
+        tap_action:
+          action: call-service
+          service: automation.trigger
+          data:
+            entity_id: automation.whats_in_fridge
+      - type: markdown
+        content: >-
+          {% set t = state_attr('automation.whats_in_fridge','last_triggered')
+          %} **Last updated:** {{ t | as_local | relative_time if t else 'never'
+          }}

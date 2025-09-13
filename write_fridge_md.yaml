@@ -1,0 +1,3 @@
+write_fridge_md: >-
+  sh -c 'mkdir -p /config/www/fridge &&
+         printf "%s" "{{ md }}" > /config/www/fridge/fridge_contents.md'
