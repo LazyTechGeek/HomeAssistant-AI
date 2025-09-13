@@ -1,0 +1,64 @@
+alias: Whats in Fridge
+description: ""
+triggers: []
+actions:
+  - action: ai_task.generate_data
+    data:
+      task_name: Whats in fridge
+      instructions: >
+        Analyze the fridge photo and produce TWO outputs:
+
+        1) compact_list — return a single-line CSV of distinct items only.
+           Rules:
+           - No shelf names, locations, categories of items “Drinks” or “Produce” and no commentary.
+           - Use short, common item names (lowercase is fine).
+           - Merge duplicates (e.g. "diet coke" + "diet cola" → "diet coke").
+           - If quantity ≥ 2, append " (n)" → e.g. "apple (3)".
+           - Must be one line only, under 240 characters.
+           Example: coke (20), apples, beer (3), ketchup
+
+        2) detailed_markdown — return a readable, bullet-point list for
+        notifications.
+           Rules:
+           - Use natural bullet formatting.
+           - dont give me any suggestions
+      structure:
+        compact_list:
+          required: true
+          selector:
+            text: {}
+        detailed_markdown:
+          required: true
+          selector:
+            text: {}
+      entity_id: ai_task.openai_ai_task
+      attachments:
+        media_content_id: media-source://camera/camera.local_file
+        media_content_type: image/jpeg
+        metadata:
+          title: Local File
+          thumbnail: /api/camera_proxy/camera.local_file
+          media_class: video
+          children_media_class: null
+          navigateIds:
+            - {}
+            - media_content_type: app
+              media_content_id: media-source://camera
+    response_variable: fridge_analysis
+  - action: persistent_notification.create
+    data:
+      title: ❄️ Fridge contents
+      message: "{{ fridge_analysis.data.detailed_markdown }}"
+  - action: notify.notify
+    data:
+      title: ❄️ Fridge contents
+      message: "{{ fridge_analysis.data.detailed_markdown }}"
+  - action: shell_command.write_fridge_md
+    data:
+      md: "{{ fridge_analysis.data.detailed_markdown }}"
+  - delay: "00:00:01"
+  - action: homeassistant.update_entity
+    target:
+      entity_id:
+        - camera.local_file
+        - sensor.read_fridge_md
