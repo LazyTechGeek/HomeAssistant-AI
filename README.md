@@ -8,13 +8,14 @@ In this video, I show you how to use Home Assistant’s AI Tasks with OpenAI to 
 
 - **[Fridge Photos](https://github.com/LazyTechGeek/HomeAssistant-AI/blob/main/fridge_photos.zip)**
 
-### 📄 Yaml for read and writing fridge_md (fridge_contents.md)
+### 📄 YAML for Reading & Writing Fridge Data
 
 - **[write fridge_md (split configuration.yaml)](https://github.com/LazyTechGeek/HomeAssistant-AI/blob/main/write_fridge_md.yaml)**
 - **[read fridge_md (split configuration.yaml)](https://github.com/LazyTechGeek/HomeAssistant-AI/blob/main/read_fridge_md.yaml)**
 - **[read and write to paste directly into configuration.yaml](https://github.com/LazyTechGeek/HomeAssistant-AI/blob/main/fridge_md_read_write_(yaml).txt)**
 
 ### ⚙️ Automations
+Pick the version that matches how you want the results displayed
 
 - **[Notifications Only](https://github.com/LazyTechGeek/HomeAssistant-AI/blob/main/automation-notifications-only_(yaml).txt)**
 - **[Notification and Input_Text Card](https://github.com/LazyTechGeek/HomeAssistant-AI/blob/main/automation-notifications-with-input-text.yaml_(yaml).txt)**
@@ -23,10 +24,5 @@ In this video, I show you how to use Home Assistant’s AI Tasks with OpenAI to 
 
 ### 🗂️ Cards
 
-- **[Card Input_Text](https://github.com/LazyTechGeek/HomeAssistant-AI/blob/main/card-input-text.yaml_(yaml).txt)**
-- **[Card Markdown](https://github.com/LazyTechGeek/HomeAssistant-AI/blob/main/card-markdown_(yaml).txt)**
-
-### Prompt Examples
----
-- **[Rogue AI Prompt](    )**
-- **[KITT AI Prompt](     )**
+- **[Input_Text Card](https://github.com/LazyTechGeek/HomeAssistant-AI/blob/main/card-input-text.yaml_(yaml).txt)**
+- **[Markdown Card](https://github.com/LazyTechGeek/HomeAssistant-AI/blob/main/card-markdown_(yaml).txt)**
