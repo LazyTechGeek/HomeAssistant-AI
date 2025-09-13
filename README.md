@@ -1,23 +1,29 @@
 # 🤖 Home Assistant + AI
 
-In this video, I walk you through setting up the Home Assistant Voice PE device from start to finish — adding devices, exploring the menus, using templates, creating automations, and even a demo with LED control.
+In this video, I walk you through setting up the Home Assistant with Open AI.
 
-▶️ [Watch part 1 here](      )  
+▶️ [Watch here](      )  
 
-### 💡 LED Automation files used in this video
+### 🗂️ Cards
 
-- **[Basic LED Automation](        )**
-- **[KITT LED Automation](        )**
+- **[Card Input_Text](https://github.com/LazyTechGeek/HomeAssistant-AI/blob/main/card-input-text.yaml%20(yaml).txt)**
+- **[Card Markdown](https://github.com/LazyTechGeek/HomeAssistant-AI/blob/main/card-markdown%20(yaml).txt)**
 
-### 🌡️ Template used for weather with temperature:
 
-- **[Weather with Temperature](      )**
+### 📄 Yaml for read and writing fridge_md (fridge_contents.md)
 
-# 🔊 Part 2 – Home Assistant Voice + OpenAI Conversation Integration
+- **[write fridge_md (split configuration.yaml)](https://github.com/LazyTechGeek/HomeAssistant-AI/blob/main/write_fridge_md.yaml)**
+- **[read fridge_md (split configuration.yaml)](https://github.com/LazyTechGeek/HomeAssistant-AI/blob/main/read_fridge_md.yaml)**
+- **[read and write to paste directly into configuration.yaml](https://github.com/LazyTechGeek/HomeAssistant-AI/blob/main/fridge_md_read_write%20(yaml).txt)**
 
-In Part 2, we install and configure the OpenAI Conversation integration in Home Assistant Voice to create a smarter, more natural assistant. This includes creating an API key, adding it to Home Assistant, setting up a Conversation Agent, and assigning a personality with custom prompts.
 
-▶️ [Watch part 2 here](   )
+### ⚙️ Automations
+
+- **[Notifications Only](https://github.com/LazyTechGeek/HomeAssistant-AI/blob/main/automation-notifications-only%20(yaml).txt)**
+- **[Notification and Input_Text Card](https://github.com/LazyTechGeek/HomeAssistant-AI/blob/main/automation-notifications-with-input-text.yaml%20(yaml).txt)**
+- **[Notification and Markdown Card](https://github.com/LazyTechGeek/HomeAssistant-AI/blob/main/automation-notifications-with-markdown%20(yaml).txt)**
+- **[Notification with both Markdown & Input_Text Card](https://github.com/LazyTechGeek/HomeAssistant-AI/blob/main/automation-notifications-with-input-text-and-markdown%20(yaml).txt)**
+
 
 ### Prompt Examples
 ---
