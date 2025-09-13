@@ -1,0 +1,17 @@
+shell_command:
+  write_fridge_md: >-
+    sh -c 'mkdir -p /config/www/fridge &&
+           printf "%s" "{{ md }}" > /config/www/fridge/fridge_contents.md'
+
+
+command_line:
+  - sensor:
+      name: Read Fridge MD
+      unique_id: read_fridge_md
+      command: >
+        python3 -c "import json, pathlib; p=pathlib.Path('/config/www/fridge/fridge_contents.md'); 
+        print(json.dumps({'md': p.read_text(encoding='utf-8') if p.exists() else ''}))"
+      value_template: "ok"
+      json_attributes:
+        - md
+      scan_interval: 30
